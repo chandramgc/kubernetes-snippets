@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-pv-deployment
+  labels:
+    app: task-pv
+    tier: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-pv
+  template:
+    metadata:
+      labels:
+        app: task-pv
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+              name: "http-server"
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: task-pv-storage
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
