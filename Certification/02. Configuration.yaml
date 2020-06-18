@@ -118,9 +118,14 @@ kubectl create secret generic
   <secret-name> --from-liteeral=<key>=<value>
 
 kubectl create secret generic \
-  app-secret --from-literal=DB_Host=sql01 \
+  db-secret --from-literal=DB_Host=sql01 \
              --from-literal=DB_User=root \
              --from-literal=DB_Password=password123
+
+  kubectl create secret generic \
+  db-secret --from-literal=DB_Host=sql01 \
+  --from-literal=DB_User=root \
+  --from-literal=DB_Password=password123
 
 Secret 1: DB_Host=sql01
 Secret 2: DB_User=root
@@ -203,3 +208,18 @@ spec:
       secret:
         # Provide the name of the ConfigMap you want to mount.
         name: app-config
+
+# Add sercurity context
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-demo-4
+spec:
+  containers:
+    - name: sec-ctx-4
+      image: gcr.io/google-samples/node-hello:1.0
+      securityContext:
+        runAsUser: 2000
+        allowPrivilegeEscalation: false
+        capabilities:
+          add: ["NET_ADMIN", "SYS_TIME"]
