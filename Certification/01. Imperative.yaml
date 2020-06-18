@@ -1,0 +1,5 @@
+# Run a container
+kubectl run nginx-pod --image=nginx:1.16 --restart=Never
+
+# Run a job
+kubectl run nginx-pod --image=nginx:1.16 --restart=OnFailure
