@@ -1,0 +1,55 @@
+﻿NAME,SHORTAND,APIGROUP,NAMESPACE,KIND
+cronjobs                       ,cj        ,batch                       ,true       ,CronJob
+configmaps                     ,cm        ,                            ,true       ,ConfigMap
+customresourcedefinitions      ,"crd,crds",apiextensions.k8s.io        ,false      ,CustomResourceDefinition
+componentstatuses              ,cs        ,                            ,false      ,ComponentStatus
+certificatesigningrequests     ,csr       ,certificates.k8s.io         ,false      ,CertificateSigningRequest
+deployments                    ,deploy    ,apps                        ,true       ,Deployment
+daemonsets                     ,ds        ,apps                        ,true       ,DaemonSet
+endpoints                      ,ep        ,                            ,true       ,Endpoints
+events                         ,ev        ,                            ,true       ,Event
+events                         ,ev        ,events.k8s.io               ,true       ,Event
+horizontalpodautoscalers       ,hpa       ,autoscaling                 ,true       ,HorizontalPodAutoscaler
+ingresses                      ,ing       ,extensions                  ,true       ,Ingress
+ingresses                      ,ing       ,networking.k8s.io           ,true       ,Ingress
+limitranges                    ,limits    ,                            ,true       ,LimitRange
+networkpolicies                ,netpol    ,networking.k8s.io           ,true       ,NetworkPolicy
+nodes                          ,no        ,                            ,false      ,Node
+namespaces                     ,ns        ,                            ,false      ,Namespace
+priorityclasses                ,pc        ,scheduling.k8s.io           ,false      ,PriorityClass
+poddisruptionbudgets           ,pdb       ,policy                      ,true       ,PodDisruptionBudget
+pods                           ,po        ,                            ,true       ,Pod
+podsecuritypolicies            ,psp       ,policy                      ,false      ,PodSecurityPolicy
+persistentvolumes              ,pv        ,                            ,false      ,PersistentVolume
+persistentvolumeclaims         ,pvc       ,                            ,true       ,PersistentVolumeClaim
+resourcequotas                 ,quota     ,                            ,true       ,ResourceQuota
+replicationcontrollers         ,rc        ,                            ,true       ,ReplicationController
+replicasets                    ,rs        ,apps                        ,true       ,ReplicaSet
+serviceaccounts                ,sa        ,                            ,true       ,ServiceAccount
+storageclasses                 ,sc        ,storage.k8s.io              ,false      ,StorageClass
+statefulsets                   ,sts       ,apps                        ,true       ,StatefulSet
+services                       ,svc       ,                            ,true       ,Service
+bindings                       ,          ,                            ,true       ,Binding
+podtemplates                   ,          ,                            ,true       ,PodTemplate
+secrets                        ,          ,                            ,true       ,Secret
+mutatingwebhookconfigurations  ,          ,admissionregistration.k8s.io,false      ,MutatingWebhookConfiguration
+validatingwebhookconfigurations,          ,admissionregistration.k8s.io,false      ,ValidatingWebhookConfiguration
+apiservices                    ,          ,apiregistration.k8s.io      ,false      ,APIService
+controllerrevisions            ,          ,apps                        ,true       ,ControllerRevision
+tokenreviews                   ,          ,authentication.k8s.io       ,false      ,TokenReview
+localsubjectaccessreviews      ,          ,authorization.k8s.io        ,true       ,LocalSubjectAccessReview
+selfsubjectaccessreviews       ,          ,authorization.k8s.io        ,false      ,SelfSubjectAccessReview
+selfsubjectrulesreviews        ,          ,authorization.k8s.io        ,false      ,SelfSubjectRulesReview
+subjectaccessreviews           ,          ,authorization.k8s.io        ,false      ,SubjectAccessReview
+jobs                           ,          ,batch                       ,true       ,Job
+leases                         ,          ,coordination.k8s.io         ,true       ,Lease
+endpointslices                 ,          ,discovery.k8s.io            ,true       ,EndpointSlice
+ingressclasses                 ,          ,networking.k8s.io           ,false      ,IngressClass
+runtimeclasses                 ,          ,node.k8s.io                 ,false      ,RuntimeClass
+clusterrolebindings            ,          ,rbac.authorization.k8s.io   ,false      ,ClusterRoleBinding
+clusterroles                   ,          ,rbac.authorization.k8s.io   ,false      ,ClusterRole
+rolebindings                   ,          ,rbac.authorization.k8s.io   ,true       ,RoleBinding
+roles                          ,          ,rbac.authorization.k8s.io   ,true       ,Role
+csidrivers                     ,          ,storage.k8s.io              ,false      ,CSIDriver
+csinodes                       ,          ,storage.k8s.io              ,false      ,CSINode
+volumeattachments              ,          ,storage.k8s.io              ,false      ,VolumeAttachment
