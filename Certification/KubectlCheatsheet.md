@@ -269,6 +269,7 @@ Master and Worker nodes ports
 
 | Verb Description | Kubectl Command |
 | ------------- | ------------- |
+| List all resouces in all namespaces | `kubectl get all --all-namespaces`|
 | List | `kubectl get namespaces` or `kubectl get ns`|
 | Create | `kubectl create ns TEST` |
 | Delete | `kubectl delete ns TEST` or `kubectl delete -f namespace.yaml`|
