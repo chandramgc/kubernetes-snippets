@@ -1,3 +1,6 @@
+# Imperative Commands
+## https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create
+
 ### Run a container
 ```
 kubectl run nginx-pod --image=nginx:1.16 --restart=Never
@@ -10,7 +13,7 @@ kubectl run nginx-pod --image=nginx:1.16 --restart=OnFailure
 
 ### Log into kubernetes
 ```
-kubectl exec ubuntu-sleeper -it -- bash
+kubectl exec -it <pod_name> -c <container_name> -n <namespace> /bin/sh
 ```
 
 ### Generate files
@@ -31,6 +34,11 @@ kubectl expose deploy nginx-app --name=nginx-service --port=80 --type=LoadBalanc
 kubectl set deployment/myapp-deployment nginx:1.1.2
 ```
 
+### Create secret
+```
+kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
+```
+
 ```
 cat << eof >> throw-dice-job.yaml
 apiVersion: batch/v1
@@ -47,24 +55,6 @@ spec:
         - name: math-add
           image: kodekloud/throw-dice
       restartPolicy: Never
-eof
-```
-```
-cat << eof >> throw-dice-cron-job.yaml
-apiVersion: batch/v1beta1
-kind: CronJob
-metadata:
-  name: throw-dice-cron-job
-spec:
-  schedule: "30 21 * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-            - name: hello
-              image: kodekloud/throw-dice
-          restartPolicy: OnFailure
 eof
 ```
 Examples:
