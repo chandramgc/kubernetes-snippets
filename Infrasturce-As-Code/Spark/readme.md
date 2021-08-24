@@ -8,4 +8,4 @@
 * kubectl expose pod spark --type=NodePort --name=spark-service
 
 # Find spark port 
-kubectl get svc
+* kubectl get svc
