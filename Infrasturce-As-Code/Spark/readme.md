@@ -4,8 +4,9 @@
 * docker push srmmanjunath/spark-base-image
 
 # Build spark standlone cluster
-* kubectl run spark --image=srmmanjunath/spark-base-image:latest --port=8080 --restart=Never
-* kubectl expose pod spark --type=NodePort --name=spark-service
+* kubectl run spark --image=srmmanjunath/spark-base-image:latest --restart=Never
+* kubectl expose pod spark --type=NodePort --name=spark-master --port=8080
+* kubectl expose pod spark --type=NodePort --name=spark-host --port=7077
 
 # Find spark port 
 * kubectl get svc
